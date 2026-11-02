@@ -1,0 +1,15 @@
+# Sample only. Copy to ~/.config/containers/systemd/openpak-ps4-telemetry.container.
+[Unit]
+Description=OpenPak ps4-telemetry
+
+[Container]
+ContainerName=openpak-ps4-telemetry
+Image=ghcr.io/openpak/ps4-telemetry:latest
+Network=openpak
+Environment=PS4_TELEMETRY_ADDR=:8541
+
+[Service]
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
